@@ -1,6 +1,4 @@
-//: Playground - noun: a place where people can play
-
-var str = "Hello, playground"
+//: 2D Vector rotation within a grid boundary
 
 let maxRows = 8
 let maxCols = 8
@@ -68,6 +66,7 @@ func rotateLine(ofPoints points: inout [(x: Int, y: Int)]) {
 
 var grid: [[Character]] = Array(repeating: Array(repeating: ".", count: maxCols), count: maxRows)
 
+// SAMPLE LINES OF POINTS
 //var boat: [(x: Int, y: Int)] = [(2, 3), (3, 3), (4, 3)]
 //var boat: [(x: Int, y: Int)] = [(2, 3), (3, 3), (4, 3), (5, 3), (6, 3)]
 //var boat: [(x: Int, y: Int)] = [(2, 1), (3, 1), (4, 1), (5, 1), (6, 1)]

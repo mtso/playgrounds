@@ -1,5 +1,7 @@
 //: 2D Vector rotation within a grid boundary
 
+import Foundation
+
 let maxRows = 8
 let maxCols = 8
 
@@ -42,18 +44,19 @@ func rotateLine(ofPoints points: inout [(x: Int, y: Int)]) {
     
     var lx = 0, ly = 0, mx = 0, my = 0
     
-    for point in points {
+    for point in [points.first!, points.last!] {
         
         if point.x < lx {
             lx = point.x
         }
-        if point.x - maxCols > mx {
+        else if point.x - maxCols > mx {
             mx = point.x - maxCols
         }
+        
         if point.y < ly {
             ly = point.y
         }
-        if point.y - maxRows > my {
+        else if point.y - maxRows > my {
             my = point.y - maxRows
         }
     }
@@ -64,7 +67,7 @@ func rotateLine(ofPoints points: inout [(x: Int, y: Int)]) {
     }
 }
 
-var grid: [[Character]] = Array(repeating: Array(repeating: ".", count: maxCols), count: maxRows)
+var grid: [[Character]] = Array(repeating: Array(repeating: "·", count: maxCols), count: maxRows)
 
 // SAMPLE LINES OF POINTS
 //var boat: [(x: Int, y: Int)] = [(2, 3), (3, 3), (4, 3)]
